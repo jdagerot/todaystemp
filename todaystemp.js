@@ -5,12 +5,15 @@ $(function() {
     //Countrycode and city:
 
     var countryString = "SE/Stockholm",
-        nbrOfHistoryYears = 5;
+        nbrOfHistoryYears = 5,
+        API_KEY_WUNDERGROUND = "",
+        historicURL = "//api.wunderground.com/api/" + API_KEY_WUNDERGROUND + "/conditions/q/" + countryString + ".json",
+        todayURL = "//api.wunderground.com/api/" + API_KEY_WUNDERGROUND + "/history_" + yearIDX + "0702/q/" + countryString + ".json";
 
 
     // Make a call to get current temperature then update the left value on the page
     $.ajax({
-        url: "//api.wunderground.com/api/" + API_KEY_WUNDERGROUND + "/conditions/q/" + countryString + ".json",
+        url: historicURL,
         dataType: "jsonp",
         success: function(parsed_json) {
             $("#leftBox").html(parsed_json.current_observation.temp_c);
@@ -49,7 +52,7 @@ $(function() {
     $("#leftBox").append("<h4>" + yearNow + "</h4><br/>");
     for (yearIDX = yearNow - 1; yearIDX >= (yearNow - nbrOfHistoryYears); yearIDX--) {
         $.ajax({
-            url: "//api.wunderground.com/api/" + API_KEY_WUNDERGROUND + "/history_" + yearIDX + "0702/q/" + countryString + ".json",
+            url: todayURL,
             dataType: "jsonp",
             success: function(parsed_json) {
 
