@@ -1,0 +1,48 @@
+<html>
+  <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//www.promisejs.org/polyfills/promise-4.0.0.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="./todaystemp.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    
+    <script>
+      var API_KEY_WUNDERGROUND = "YOUR KEY HERE";
+    </script>
+    
+  </head>
+  <body>
+    
+    <div class="page-header">
+      <h1 class="text-center">
+        The temperature outside! 
+        <small>
+          And some relative values
+        </small>
+      </h1>
+      
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h2>
+            NOW
+          </h2>
+          <h3 style="font-size:100px;" id="leftBox">
+          </h3>
+          
+        </div>
+        <div class="col-md-6 text-center">
+          <h2>
+            Same time other years
+          </h2>
+          <h3 style="font-size:50px;" id="rightBox">
+          </h3>
+        </div>
+      </div>
+        </div>
+  </body>
+ </html>
